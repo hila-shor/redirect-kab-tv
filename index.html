@@ -284,14 +284,20 @@
 
                 <div class="redirect-message" data-en="You will be automatically redirected in 30 seconds." data-he="תועבר אוטומטית תוך 30 שניות." data-ru="Вы будете автоматически перенаправлены через 30 секунд." data-es="Serás redirigido automáticamente en 30 segundos.">You will be automatically redirected in 30 seconds.</div>
 
-                <div class="card-message" data-en="The website is closed, but learning continues!<br>We have moved to the new Virtual Home.<br>Everything you love is waiting for you there." data-he="האתר נסגר, אבל הלימוד ממשיך!<br/>עברנו לבית הווירטואלי החדש.<br/>מחכה לכם שם כל מה שאתם אוהבים." data-ru="Сайт закрыт, но обучение продолжается!<br>Мы переехали в новый Виртуальный Дом.<br>Все, что вы любите, ждет вас там." data-es="¡El sitio web está cerrado, pero el aprendizaje continúa!<br>Nos hemos mudado a la nueva Casa Virtual.<br>Todo lo que amas te espera allí.">The website is closed, but learning continues!<br>We have moved to the new Virtual Home.<br>Everything you love is waiting for you there.</div>
+                <div class="card-message" data-en="Kab.tv has closed and has been replaced by our new Virtual Home.<br>Watch live lessons or access past lessons there." data-he="האתר נסגר, אבל הלימוד ממשיך!<br/>עברנו למקומות חדשים<br/>ואנחנו מזמינים אתכם להמשיך לצפות בדרך שנוחה לכם:" data-ru="Сайт закрыт, но обучение продолжается!<br>Мы переехали в новые места<br>и приглашаем вас продолжить смотреть так, как вам удобно:" data-es="¡El sitio web está cerrado, pero el aprendizaje continúa!<br>Nos hemos mudado a nuevos lugares<br>y te invitamos a continuar viendo de la manera que te resulte cómoda:">Kab.tv has closed and has been replaced by our new Virtual Home.<br>Watch live lessons or access past lessons there.</div>
                 
                
                 <div class="card-actions">
-                    <!-- כפתור ראשי -->
-                    <a href="https://kli.one/dash/broadcast" class="btn btn-primary" style="width: auto; min-width: 240px; max-width: 350px; padding: 10px 24px;" data-en="Click here to continue together >>" data-he="לחצו כאן וממשיכים יחד >>" data-ru="Продолжить вместе >>" data-es="Continuar juntos >>">
-                        לחצו כאן וממשיכים יחד >>
-                    </a>
+                    <!-- כפתורים ראשיים -->
+                    <div style="display: flex; gap: 12px; justify-content: center; width: 100%;">
+                        <a href="https://kli.one/dash/broadcast" class="btn btn-primary" style="flex: 1; min-width: 200px; max-width: 250px; padding: 10px 24px;" data-en="Watch Live Lesson" data-he="שידור חי בבית הוירטואלי" data-ru="Прямая трансляция в Виртуальном Доме" data-es="Transmisión en vivo en la Casa Virtual">
+                            לחצו כאן וממשיכים יחד >>
+                        </a>
+                        
+                        <a href="https://www.kabbalah.info/" class="btn btn-primary" style="flex: 1; min-width: 200px; max-width: 250px; padding: 10px 24px;" data-en="Go to Kabbalah.info" data-he="לצפייה בערוץ התוכן" data-ru="Смотреть канал контента" data-es="Ver Canal de Contenido" data-en-url="https://www.kabbalah.info/" data-he-url="https://kabtv.co.il/" data-ru-url="https://www.kabbalah.info/rus/" data-es-url="https://www.kabbalah.info/es/">
+                            לצפייה בערוץ התוכן
+                        </a>
+                    </div>
 
                     <!-- שורת תמיכה -->
                     <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px;">
@@ -324,6 +330,17 @@
                 const text = element.getAttribute('data-' + lang);
                 if (text) element.innerHTML = text;
             });
+            
+            // Update URLs for the second button based on language
+            const secondButton = document.querySelector('a[data-en-url]');
+            if (secondButton) {
+                const urlAttribute = 'data-' + lang + '-url';
+                const newUrl = secondButton.getAttribute(urlAttribute);
+                if (newUrl) {
+                    secondButton.href = newUrl;
+                }
+            }
+            
             localStorage.setItem('redirect_language', lang);
             
             const langFloat = document.getElementById('langFloat');
