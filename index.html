@@ -288,7 +288,7 @@
                 
                
                 <div class="card-actions">
-                    <!-- כפתורים ראשיים -->
+                    <!-- Main buttons -->
                     <div style="display: flex; gap: 12px; justify-content: center; width: 100%;">
                         <a href="https://kli.one/dash/broadcast" class="btn btn-primary" style="flex: 1; min-width: 200px; max-width: 250px; padding: 10px 24px;" data-en="Watch Live Lesson" data-he="שידור חי בבית הוירטואלי" data-ru="Прямая трансляция в Виртуальном Доме" data-es="Transmisión en vivo en la Casa Virtual">
                             לחצו כאן וממשיכים יחד >>
@@ -299,7 +299,7 @@
                         </a>
                     </div>
 
-                    <!-- שורת תמיכה -->
+                    <!-- Support row -->
                     <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px;">
                         <span style="font-size: 0.9em; color: #555;" data-en="Encountered a problem?" data-he="נתקלתם בבעיה?" data-ru="Возникла проблема?" data-es="¿Tuviste un problema?">נתקלתם בבעיה?</span>
                         <a href="#" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;" data-en="Technical Support" data-he="תמיכה טכנית" data-ru="Техническая поддержка" data-es="Soporte técnico" onclick="openEmailSupport(); return false;">תמיכה טכנית</a>
@@ -352,9 +352,9 @@
                 langFloat.classList.add('left');
             }
             
-            /* // Update original text for countdown
+             // Update original text for countdown
             const countdownDisplay = document.querySelector('.redirect-message');
-            window.originalText = countdownDisplay.textContent; */
+            window.originalText = countdownDisplay.textContent; 
         }
         function selectLang(lang, event) {
             setLanguage(lang);
@@ -380,7 +380,7 @@
             const detectedLang = savedLang || detectLanguage();
             setLanguage(detectedLang);
             
-            /* // Add click handler for Contact Us button to ensure it works
+             // Add click handler for Contact Us button to ensure it works
             const contactBtn = document.getElementById('contactUsBtn');
             if (contactBtn) {
                 contactBtn.addEventListener('click', function() {
@@ -394,9 +394,9 @@
                     window.open(gmailUrl, '_blank');
                     console.log('Opening Gmail compose');
                 });
-            } */
+            } 
             
-            /* // Start 30-second countdown for automatic redirect
+             // Start 30-second countdown for automatic redirect
             let countdown = 30;
             const countdownDisplay = document.querySelector('.redirect-message');
             window.originalText = countdownDisplay.textContent;
@@ -410,9 +410,9 @@
                 } else {
                     // Redirect to kli.one
                     clearInterval(countdownInterval);
-                    window.location.href = 'https://kli.one';
+                    window.location.href = 'https://kli.one/dash/broadcast';
                 }
-            }, 1000); */
+            }, 1000); 
 
         });
         document.addEventListener('click', function(e) {
