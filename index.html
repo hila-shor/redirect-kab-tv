@@ -4,252 +4,260 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BNEI BARUCH | Redirect</title>
-    <style>
-        :root {
-            --main-blue: #1976d2;
-            --main-gray: #f4f6f8;
-            --header-dark: #232f3e;
-            --header-height: 64px;
-            --card-radius: 12px;
-            --card-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            --font-main: 'Segoe UI', 'Arial', sans-serif;
-        }
-        html, body {
-            height: 100%;
-        }
-        body {
-            min-height: 100vh;
-            margin: 0;
-            background: var(--main-gray);
-            font-family: var(--font-main);
-            display: flex;
-            flex-direction: column;
-        }
-        .main {
-            flex: 1 1 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            flex-direction: column;
-            box-sizing: border-box;
-            margin-top: -40px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            margin-left: -30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0px;
-            
-        }
-        .logo  {
-            width: 80px;
-            height: auto;
-            max-width: 100%;
-        }
-        .header-text {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #284952;
-            letter-spacing: 1px;
-        }
-        .card {
-            background: #fff;
-            border-radius: var(--card-radius);
-            box-shadow: var(--card-shadow);
-            padding: 40px 32px 32px 32px;
-            width: 500px;
-            min-width: 500px;
-            max-width: 500px;
-            min-height: 260px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
-        .card-content {
-            flex: 1 1 auto;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .lang-float {
-            position: absolute;
-            top: 18px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .lang-float.left {
-            left: 24px;
-            right: auto;
-            flex-direction: row;
-        }
-        .lang-float.right {
-            right: 24px;
-            left: auto;
-            flex-direction: row-reverse;
-        }
-        .lang-globe {
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            vertical-align: middle;
-            color: #888;
-        }
-        .lang-select-btn {
-            background: none;
-            border: none;
-            color: #444;
-            font-size: 1em;
-            font-family: inherit;
-            cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 5px;
-            transition: background 0.2s, color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .lang-select-btn:hover, .lang-select-btn.active {
-            background: #f4f6f8;
-            color: var(--main-blue);
-        }
-        .lang-list {
-            position: absolute;
-            top: 36px;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            z-index: 10;
-            display: none;
-            flex-direction: column;
-            min-width: 90px;
-        }
-        .lang-list.show {
-            display: flex;
-        }
-        .lang-option {
-            padding: 8px 16px;
-            font-size: 1em;
-            color: #232f3e;
-            background: #fff;
-            border: none;
-            text-align: left;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-        .lang-option:hover, .lang-option.active {
-            background: #e3e8ef;
-            color: #1976d2;
-        }
-        .card-icon {
-            background: var(--main-blue);
-            border-radius: 50%;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-        }
-        .card-icon svg {
-            width: 32px;
-            height: 32px;
-            color: #fff;
-        }
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #222;
-        }
-        .card-message {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-        
-        .redirect-message {
-            color: var(--main-blue);
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            line-height: 1.4;
-            font-weight: 500;
-        }
-        .card-actions {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            
-        }
-        .btn {
-            padding: 10px 22px;
-            border-radius: 6px;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-primary {
-            background: var(--main-blue);
-            color: #fff;
-        }
-        .btn-primary:hover {
-            background: #1251a3;
-        }
-        .btn-secondary {
-            background: #f4f6f8;
-            color: #1976d2;
-            border: 1px solid #e0e0e0;
-        }
-        .btn-secondary:hover {
-            background: #e3e8ef;
-        }
-        .footer {
-            margin-top: 0;
-            color: #aaa;
-            font-size: 0.95em;
-            width: 100%;
-            padding-top: 18px;
-            padding-bottom: 2px;
-        }
-        @media (max-width: 600px) {
-            .card {
-                padding: 24px 8px 16px 8px;
-                max-width: 85vw;
-                min-width: unset;
-                width: 98vw;
-            }
-            .header-text {
-                font-size: 1.1rem;
-            } */
-            .lang-float.left {
-                left: 8px;
-            }
-            .lang-float.right {
-                right: 8px;
-            }
-        }
-    </style>
+        <style>
+    :root {
+        --main-blue: #1976d2;
+        --main-gray: #f4f6f8;
+        --header-dark: #232f3e;
+        --header-height: 64px;
+        --card-radius: 12px;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        --font-main: 'Segoe UI','Arial',sans-serif;
+    }
+
+    html, body { height: 100%; }
+    body {
+        min-height: 100vh;
+        margin: 0;
+        background: var(--main-gray);
+        font-family: var(--font-main);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-top: -40px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: -30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .logo { width: 80px; height: auto; max-width: 100%; }
+
+    .header-text {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #284952;
+        letter-spacing: 1px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--card-shadow);
+        padding: 40px 32px 32px;
+        width: 500px;
+        max-width: 92vw;  
+        min-width: auto;   
+        min-height: 260px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .card-content {
+        flex: 1 1 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lang-float {
+        position: absolute;
+        top: 18px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .lang-float.left { left: 24px; right: auto; flex-direction: row; }
+    .lang-float.right { right: 24px; left: auto; flex-direction: row-reverse; }
+
+    .lang-globe { width: 20px; height: 20px; color: #888; }
+
+    .lang-select-btn {
+        background: none;
+        border: none;
+        color: #444;
+        font-size: 1em;
+        font-family: inherit;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 5px;
+        transition: background .2s, color .2s;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .lang-select-btn:hover, .lang-select-btn.active { background: #f4f6f8; color: var(--main-blue); }
+
+    .lang-list {
+        position: absolute;
+        top: 36px; left: 0; right: 0;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        z-index: 10;
+        display: none;
+        flex-direction: column;
+        min-width: 90px;
+    }
+    .lang-list.show { display: flex; }
+
+    .lang-option {
+        padding: 8px 16px;
+        font-size: 1em;
+        color: #232f3e;
+        background: #fff;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+    }
+    .lang-option:hover, .lang-option.active { background: #e3e8ef; color: #1976d2; }
+
+    .card-icon {
+        background: var(--main-blue);
+        border-radius: 50%;
+        width: 56px; height: 56px;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 18px;
+    }
+    .card-icon svg { width: 32px; height: 32px; color: #fff; }
+
+    .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: #222; }
+
+    .card-message { color: #555; font-size: 1rem; margin-bottom: 24px; line-height: 1.5; }
+
+    .redirect-message {
+        color: var(--main-blue);
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+        line-height: 1.4;
+        font-weight: 500;
+    }
+
+    .card-actions {
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* Main buttons row */
+     .main-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        width: 100%;
+    }
+    .main-buttons .btn {
+        flex: 1 1 240px;
+        min-width: 200px;
+        max-width: 250px;
+        padding: 10px 24px;
+    }
+
+    /* Support row */
+     .support-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 4px;
+        flex-wrap: wrap; 
+    }
+
+    .btn {
+        padding: 10px 22px;
+        border-radius: 6px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .btn-primary { background: var(--main-blue); color: #fff; }
+    .btn-primary:hover { background: #1251a3; }
+    .btn-secondary { background: #f4f6f8; color: #1976d2; border: 1px solid #e0e0e0; }
+    .btn-secondary:hover { background: #e3e8ef; }
+
+    .footer {
+        margin-top: 0;
+        color: #aaa;
+        font-size: 0.95em;
+        width: 100%;
+        padding-top: 18px;
+        padding-bottom: 2px;
+    }
+    /* Mobile */
+    @media (max-width: 600px) {
+    .card {
+        padding: 20px 12px 16px;
+        max-width: 80vw;
+    }
+    .header { margin-left: 0; gap: 8px; }
+    .logo { width: 56px; }
+    .header-text { font-size: 1.1rem; }
+
+    .card-title { font-size: 1.15rem; }
+    .card-message { font-size: 0.95rem; margin-bottom: 18px; }
+    .redirect-message { font-size: 0.9rem; margin-bottom: 12px; }
+
+    /* redirect buttons */
+    .main-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 80%;
+    }
+
+    .main-buttons .btn {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 12px 14px !important;
+        line-height: 1.25;
+    }
+
+    /* support section*/
+    .support-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .lang-float.left { left: 8px; }
+    .lang-float.right { right: 8px; }
+    }
+</style>
 </head>
 <body>
    
@@ -289,22 +297,50 @@
                
                 <div class="card-actions">
                     <!-- Main buttons -->
-                    <div style="display: flex; gap: 12px; justify-content: center; width: 100%;">
-                        <a href="https://kli.one/dash/broadcast" class="btn btn-primary" style="flex: 1; min-width: 200px; max-width: 250px; padding: 10px 24px;" data-en="Watch Live Lesson" data-he="שידור חי בבית הוירטואלי" data-ru="Прямая трансляция в Виртуальном Доме" data-es="Transmisión en vivo en la Casa Virtual">
-                            לחצו כאן וממשיכים יחד >>
-                        </a>
-                        
-                        <a href="https://www.kabbalah.info/" class="btn btn-primary" style="flex: 1; min-width: 200px; max-width: 250px; padding: 10px 24px;" data-en="Go to Kabbalah.info" data-he="לצפייה בערוץ התוכן" data-ru="Смотреть канал контента" data-es="Ver Canal de Contenido" data-en-url="https://www.kabbalah.info/" data-he-url="https://kabtv.co.il/" data-ru-url="https://www.kabbalah.info/rus/" data-es-url="https://track.kabuconnect.info/21a350bb-2433-4830-b1e9-3af8b72caaef?utm_source=site&amp;utm_campaign=kabtv&amp;utm_medium=bnr">
-                            לצפייה בערוץ התוכן
-                        </a>
+                    <div class="main-buttons">
+                      <a href="https://kli.one/dash/broadcast"
+                         class="btn btn-primary"
+                         data-en="Watch Live Lesson"
+                         data-he="שידור חי בבית הוירטואלי"
+                         data-ru="Прямая трансляция в Виртуальном Доме"
+                         data-es="Transmisión en vivo en la Casa Virtual">
+                         לחצו כאן וממשיכים יחד >>
+                      </a>
+                  
+                      <a href="https://www.kabbalah.info/"
+                         class="btn btn-primary"
+                         data-en="Go to Kabbalah.info"
+                         data-he="לצפייה בערוץ התוכן"
+                         data-ru="Смотреть канал контента"
+                         data-es="Ver Canal de Contenido"
+                         data-en-url="https://www.kabbalah.info/"
+                         data-he-url="https://kabtv.co.il/"
+                         data-ru-url="https://www.kabbalah.info/rus/tv/"
+                         data-es-url="https://track.kabuconnect.info/21a350bb-2433-4830-b1e9-3af8b72caaef?utm_source=site&utm_campaign=kabtv&utm_medium=bnr">
+                         לצפייה בערוץ התוכן
+                      </a>
                     </div>
-
+                  
                     <!-- Support row -->
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px;">
-                        <span style="font-size: 0.9em; color: #555;" data-en="Encountered a problem?" data-he="נתקלתם בבעיה?" data-ru="Возникла проблема?" data-es="¿Tuviste un problema?">נתקלתם בבעיה?</span>
-                        <a href="#" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85em;" data-en="Technical Support" data-he="תמיכה טכנית" data-ru="Техническая поддержка" data-es="Soporte técnico" onclick="openEmailSupport(); return false;">תמיכה טכנית</a>
+                    <div class="support-row">
+                      <span style="font-size: 0.9em; color: #555;"
+                            data-en="Encountered a problem?"
+                            data-he="נתקלתם בבעיה?"
+                            data-ru="Возникла проблема?"
+                            data-es="¿Tuviste un problema?">נתקלתם בבעיה?</span>
+                      <a href="#"
+                         class="btn btn-secondary"
+                         style="padding: 6px 12px; font-size: 0.85em;"
+                         data-en="Technical Support"
+                         data-he="תמיכה טכנית"
+                         data-ru="Техническая поддержка"
+                         data-es="Soporte técnico"
+                         onclick="openEmailSupport(); return false;">
+                         תמיכה טכנית
+                      </a>
                     </div>
                 </div>
+                  
             </div>
         </div>
     </div>
